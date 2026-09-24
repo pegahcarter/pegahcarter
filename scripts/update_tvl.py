@@ -250,9 +250,10 @@ def tokens_block():
     for sym, chain, addr, cg in PROTOCOL_TOKENS:
         out.append(f"| {sym} | {chain.capitalize()} | {usd(caps[cg])} | {peak(peaks, cg)} | {link(chain, addr)} |")
 
-    out += ["", "**Frax LayerZero OFTs**", "", "| Token | Market cap* | Peak market cap* |", "|---|---|---|"]
+    out += ["", "**Frax LayerZero OFTs\\*\\***", "", "| Token | Market cap* | Peak market cap* |", "|---|---|---|"]
     for sym, cg in FRAX_OFTS:
         out.append(f"| {sym} | {usd(caps[cg])} | {peak(peaks, cg)} |")
+    out += ["", "<sub>\\*\\*Contract addresses on every chain: [Frax docs](https://docs.frax.com/protocol/crosschain/addresses).</sub>"]
 
     bonds = get("https://api.frax.finance/v2/fxb/bonds")["bonds"]
     out += ["", "**FXB bonds**", "", "| Bond | Chain | Maturity | Value Issued* | Contract |", "|---|---|---|---|---|"]
