@@ -24,10 +24,10 @@ EXPLORERS = {
 }
 RPC = {"ethereum": "https://ethereum-rpc.publicnode.com", "fraxtal": "https://rpc.frax.com"}
 
-# (symbol, chain, address, coingecko id)
+# (symbol, chain, VotingEscrow address, coingecko id of the underlying token)
 PROTOCOL_TOKENS = [
-    ("AERO", "base", "0x940181a94A35A4569E4529A3CDfB74e38FD98631", "aerodrome-finance"),
-    ("VELO", "optimism", "0x9560e827aF36c94D2Ac33a39bCE1Fe78631088Db", "velodrome-finance"),
+    ("veAERO", "base", "0xeBf418Fe2512e7E6bd9b87a8F0f294aCDC67e6B4", "aerodrome-finance"),
+    ("veVELO", "optimism", "0xFAf8FD17D9840595845582fCB047DF13f006787d", "velodrome-finance"),
 ]
 
 # Frax LayerZero OFTs: (symbol, coingecko id)

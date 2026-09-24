@@ -26,8 +26,8 @@
 
 | Token | Chain | Market cap* | Peak market cap* | Contract |
 |---|---|---|---|---|
-| AERO | Base | $719.0M | $1.50B (Dec 2024) | [`0x9401…8631`](https://basescan.org/address/0x940181a94A35A4569E4529A3CDfB74e38FD98631) |
-| VELO | Optimism | $39.6M | $242.0M (Dec 2024) | [`0x9560…88Db`](https://optimistic.etherscan.io/address/0x9560e827aF36c94D2Ac33a39bCE1Fe78631088Db) |
+| veAERO | Base | $719.0M | $1.50B (Dec 2024) | [`0xeBf4…e6B4`](https://basescan.org/address/0xeBf418Fe2512e7E6bd9b87a8F0f294aCDC67e6B4) |
+| veVELO | Optimism | $39.6M | $242.0M (Dec 2024) | [`0xFAf8…787d`](https://optimistic.etherscan.io/address/0xFAf8FD17D9840595845582fCB047DF13f006787d) |
 
 **Frax LayerZero OFTs\*\***
 
