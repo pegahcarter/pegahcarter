@@ -28,17 +28,15 @@ PROTOCOL_TOKENS = [
     ("VELO", "optimism", "0x9560e827aF36c94D2Ac33a39bCE1Fe78631088Db", "velodrome-finance"),
 ]
 
-# Frax LayerZero OFTs: (symbol, Ethereum contract, coingecko id)
+# Frax LayerZero OFTs: (symbol, coingecko id)
 FRAX_OFTS = [
-    ("frxUSD", "0x566a6442A5A6e9895B9dCA97cC7879D632c6e4B0", "frax-usd"),
-    ("sfrxUSD", "0x7311CEA93ccf5f4F7b789eE31eBA5D9B9290E126", "staked-frax-usd"),
-    ("frxETH", "0x1c1649A38f4A3c5A0c4a24070f688C525AB7D6E6", "frax-ether"),
-    ("sfrxETH", "0xbBc424e58ED38dd911309611ae2d7A23014Bd960", "staked-frax-ether"),
-    ("FRAX (WFRAX, formerly FXS)", "0x04ACaF8D2865c0714F79da09645C13FD2888977f", "frax-share"),
-    ("Legacy FRAX (LFRAX)", "0x909DBdE1eBE906Af95660033e478D59EFe831fED", "frax"),
+    ("frxUSD", "frax-usd"),
+    ("sfrxUSD", "staked-frax-usd"),
+    ("frxETH", "frax-ether"),
+    ("sfrxETH", "staked-frax-ether"),
+    ("FRAX (WFRAX, formerly FXS)", "frax-share"),
 ]
-FOOTNOTE = (f"<sub>*Fetched {STAMP}. See [the update script](scripts/update_tvl.py) "
-            "for sources and the latest values; it runs daily.</sub>")
+FOOTNOTE = f"<sub>*Fetched {STAMP}. See [the update script](scripts/update_tvl.py) for details.</sub>"
 
 
 def get(url, body=None):
@@ -105,15 +103,15 @@ def eth_call_uint(chain, addr, data):
 
 
 def tokens_block():
-    caps = mcaps([t[3] for t in PROTOCOL_TOKENS] + [t[2] for t in FRAX_OFTS])
+    caps = mcaps([t[3] for t in PROTOCOL_TOKENS] + [t[1] for t in FRAX_OFTS])
 
     out = ["**Protocol tokens**", "", "| Token | Chain | Market cap* | Contract |", "|---|---|---|---|"]
     for sym, chain, addr, cg in PROTOCOL_TOKENS:
         out.append(f"| {sym} | {chain.capitalize()} | {usd(caps[cg])} | {link(chain, addr)} |")
 
-    out += ["", "**Frax LayerZero OFTs**", "", "| Token | Market cap* | Ethereum contract |", "|---|---|---|"]
-    for sym, addr, cg in FRAX_OFTS:
-        out.append(f"| {sym} | {usd(caps[cg])} | {link('ethereum', addr)} |")
+    out += ["", "**Frax LayerZero OFTs**", "", "| Token | Market cap* |", "|---|---|"]
+    for sym, cg in FRAX_OFTS:
+        out.append(f"| {sym} | {usd(caps[cg])} |")
 
     bonds = get("https://api.frax.finance/v2/fxb/bonds")["bonds"]
     out += ["", "**FXB bonds**", "", "| Bond | Chain | Maturity | Value Issued* | Contract |", "|---|---|---|---|---|"]
