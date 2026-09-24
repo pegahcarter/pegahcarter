@@ -2,6 +2,8 @@
 
 TVL:          DefiLlama protocol API (current + peak TVL)
 Market caps:  DefiLlama coins API (CoinGecko market caps, no API key needed)
+Peak caps:    running max in scripts/peaks.json; free APIs only return 365 days of history,
+              so pre-tracking peaks were seeded by hand
 FXB bonds:    Frax API (bond list) + on-chain totalFxbMinted (max supply) x $1 face value
 OFT list:     hardcoded from FraxFinance/frax-oft-upgradeable README (commit 981a7b9, 2026-09-10)
 If a source fails, that block is left unchanged so the README never breaks.
@@ -36,6 +38,7 @@ FRAX_OFTS = [
     ("sfrxETH", "staked-frax-ether"),
     ("FRAX (WFRAX, formerly FXS)", "frax-share"),
 ]
+PEAKS_FILE = "scripts/peaks.json"
 FOOTNOTE = f"<sub>*Fetched {STAMP}. See [the update script](scripts/update_tvl.py) for details.</sub>"
 
 
@@ -102,16 +105,35 @@ def eth_call_uint(chain, addr, data):
     return int(r["result"], 16) / 1e18
 
 
+def update_peaks(caps):
+    try:
+        peaks = json.load(open(PEAKS_FILE))
+    except FileNotFoundError:
+        peaks = {}
+    for cg, cap in caps.items():
+        if cap and cap > peaks.get(cg, {}).get("mcap", 0):
+            peaks[cg] = {"mcap": round(cap, -5), "date": NOW.date().isoformat()}
+    return peaks
+
+
+def peak(peaks, cg):
+    p = peaks.get(cg)
+    if not p:
+        return "n/a"
+    return f"{usd(p['mcap'])} ({datetime.date.fromisoformat(p['date']):%b %Y})"
+
+
 def tokens_block():
     caps = mcaps([t[3] for t in PROTOCOL_TOKENS] + [t[1] for t in FRAX_OFTS])
+    peaks = update_peaks(caps)
 
-    out = ["**Protocol tokens**", "", "| Token | Chain | Market cap* | Contract |", "|---|---|---|---|"]
+    out = ["**Protocol tokens**", "", "| Token | Chain | Market cap* | Peak market cap* | Contract |", "|---|---|---|---|---|"]
     for sym, chain, addr, cg in PROTOCOL_TOKENS:
-        out.append(f"| {sym} | {chain.capitalize()} | {usd(caps[cg])} | {link(chain, addr)} |")
+        out.append(f"| {sym} | {chain.capitalize()} | {usd(caps[cg])} | {peak(peaks, cg)} | {link(chain, addr)} |")
 
-    out += ["", "**Frax LayerZero OFTs**", "", "| Token | Market cap* |", "|---|---|"]
+    out += ["", "**Frax LayerZero OFTs**", "", "| Token | Market cap* | Peak market cap* |", "|---|---|---|"]
     for sym, cg in FRAX_OFTS:
-        out.append(f"| {sym} | {usd(caps[cg])} |")
+        out.append(f"| {sym} | {usd(caps[cg])} | {peak(peaks, cg)} |")
 
     bonds = get("https://api.frax.finance/v2/fxb/bonds")["bonds"]
     out += ["", "**FXB bonds**", "", "| Bond | Chain | Maturity | Value Issued* | Contract |", "|---|---|---|---|---|"]
@@ -123,6 +145,10 @@ def tokens_block():
         out.append(f"| {b['symbol']} | {b['chain'].capitalize()} | {b['maturity']} | {cap} | {link(b['chain'], b['address'])} |")
 
     out += ["", FOOTNOTE]
+    # Written only after every source succeeded, so a failed run never persists partial peaks.
+    with open(PEAKS_FILE, "w") as f:
+        json.dump(peaks, f, indent=2)
+        f.write("\n")
     return "\n".join(out)
 
 

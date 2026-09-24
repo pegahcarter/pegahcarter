@@ -1,0 +1,30 @@
+{
+  "aerodrome-finance": {
+    "mcap": 1500000000,
+    "date": "2024-12-01"
+  },
+  "velodrome-finance": {
+    "mcap": 242000000,
+    "date": "2024-12-01"
+  },
+  "frax-usd": {
+    "mcap": 140100000,
+    "date": "2026-05-07"
+  },
+  "staked-frax-usd": {
+    "mcap": 46100000,
+    "date": "2026-04-22"
+  },
+  "frax-ether": {
+    "mcap": 1200000000,
+    "date": "2024-03-01"
+  },
+  "staked-frax-ether": {
+    "mcap": 856000000,
+    "date": "2024-03-01"
+  },
+  "frax-share": {
+    "mcap": 226900000.0,
+    "date": "2025-09-25"
+  }
+}

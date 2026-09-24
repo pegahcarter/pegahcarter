@@ -23,7 +23,7 @@ jobs:
       - run: python scripts/update_tvl.py
       - name: Commit if changed
         run: |
-          if git diff --quiet README.md; then
+          if git diff --quiet; then
             echo "No changes"
             exit 0
           fi
