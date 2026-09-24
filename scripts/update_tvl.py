@@ -89,6 +89,7 @@ def tvl(slug):
 
 
 EPOCH = datetime.date(1970, 1, 1).toordinal()
+ASSETS_URL = "https://raw.githubusercontent.com/pegahcarter/pegahcarter/main/assets"
 
 
 def day_to_date(day):
@@ -123,8 +124,9 @@ def tvl_block():
     for theme in THEMES:
         with open(f"assets/tvl-{theme}.svg", "w") as f:
             f.write(tvl_svg(series, THEMES[theme]))
-    picture = ('<picture>\n  <source media="(prefers-color-scheme: dark)" srcset="assets/tvl-dark.svg">\n'
-               '  <img alt="TVL over time for Aerodrome, Velodrome and Fraxtal" src="assets/tvl-light.svg">\n</picture>')
+    # Absolute URLs: the profile page at github.com/<user> doesn't resolve repo-relative srcset paths.
+    picture = (f'<picture>\n  <source media="(prefers-color-scheme: dark)" srcset="{ASSETS_URL}/tvl-dark.svg">\n'
+               f'  <img alt="TVL over time for Aerodrome, Velodrome and Fraxtal" src="{ASSETS_URL}/tvl-light.svg">\n</picture>')
     return "\n".join([picture, ""] + rows + ["", FOOTNOTE])
 
 

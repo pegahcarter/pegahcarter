@@ -6,8 +6,8 @@
 
 <!-- TVL:START -->
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="assets/tvl-dark.svg">
-  <img alt="TVL over time for Aerodrome, Velodrome and Fraxtal" src="assets/tvl-light.svg">
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/pegahcarter/pegahcarter/main/assets/tvl-dark.svg">
+  <img alt="TVL over time for Aerodrome, Velodrome and Fraxtal" src="https://raw.githubusercontent.com/pegahcarter/pegahcarter/main/assets/tvl-light.svg">
 </picture>
 
 | Protocol | TVL now* | Peak TVL* |
@@ -16,7 +16,7 @@
 | [Velodrome](https://defillama.com/protocol/velodrome) | $37.9M | $324.0M (Mar 2023) |
 | [Fraxtal](https://defillama.com/protocol/fraxtal) | $168.9M | $281.2M (Jul 2025) |
 
-<sub>*Fetched 2026-09-24 14:30 UTC. See [the update script](scripts/update_tvl.py) for details.</sub>
+<sub>*Fetched 2026-09-24 14:31 UTC. See [the update script](scripts/update_tvl.py) for details.</sub>
 <!-- TVL:END -->
 
 ## Tokens I developed
@@ -51,5 +51,5 @@
 | FXB20291231 | Fraxtal | 2029-12-31 | $12.7M | [`0xF1e2…2153`](https://fraxscan.com/address/0xF1e2b576aF4C6a7eE966b14C810b772391e92153) |
 | FXB20551231 | Fraxtal | 2055-12-31 | $13.6M | [`0xc381…EA83`](https://fraxscan.com/address/0xc38173D34afaEA88Bc482813B3CD267bc8A1EA83) |
 
-<sub>*Fetched 2026-09-24 14:30 UTC. See [the update script](scripts/update_tvl.py) for details.</sub>
+<sub>*Fetched 2026-09-24 14:31 UTC. See [the update script](scripts/update_tvl.py) for details.</sub>
 <!-- TOKENS:END -->
