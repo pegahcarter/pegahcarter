@@ -59,7 +59,7 @@
 ## Design
 
 <details>
-<summary><b>Frax crosschain hub</b>: architecture diagram of Frax token flows across 20 chains</summary>
+<summary><b>Frax crosschain hub</b>: architecture diagram of Frax token flows across 17 chains</summary>
 <br>
 <a href="https://docs.frax.com/protocol/crosschain/addresses"><img src="assets/crosschain-hub.png" width="700" alt="Frax crosschain hub architecture diagram"></a>
 </details>
