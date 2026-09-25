@@ -69,3 +69,15 @@
 <br>
 <img src="assets/fxb-amo.png" width="700" alt="FXB bonds and Bonds AMO architecture diagram">
 </details>
+
+<details>
+<summary><b>BAMM</b>: overview, lender and borrower flow diagrams</summary>
+<br>
+<a href="https://docs.frax.com/protocol/subprotocols/bamm/overview"><img src="assets/bamm.png" width="700" alt="BAMM architecture overview"></a>
+<br><br>
+<b>Lenders</b><br>
+<img src="assets/bamm-lenders.png" width="700" alt="BAMM lender flow">
+<br><br>
+<b>Borrowers</b><br>
+<img src="assets/bamm-borrowers.png" width="700" alt="BAMM borrower flow">
+</details>
