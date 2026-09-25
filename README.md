@@ -55,3 +55,11 @@
 
 <sub>*Fetched 2026-09-24 14:36 UTC. See [the update script](scripts/update_tvl.py) for details.</sub>
 <!-- TOKENS:END -->
+
+## Design
+
+<details>
+<summary><b>Frax crosschain hub</b>: architecture diagram of Frax token flows across 20 chains</summary>
+<br>
+<a href="https://docs.frax.com/protocol/crosschain/addresses"><img src="assets/crosschain-hub.png" width="700" alt="Frax crosschain hub architecture diagram"></a>
+</details>
