@@ -63,3 +63,9 @@
 <br>
 <a href="https://docs.frax.com/protocol/crosschain/addresses"><img src="assets/crosschain-hub.png" width="700" alt="Frax crosschain hub architecture diagram"></a>
 </details>
+
+<details>
+<summary><b>FXB bonds</b>: architecture diagram of the FXB zero-coupon bond system and Bonds AMO auctions</summary>
+<br>
+<img src="assets/fxb-amo.png" width="700" alt="FXB bonds and Bonds AMO architecture diagram">
+</details>
