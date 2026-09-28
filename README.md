@@ -84,4 +84,4 @@
 
 ## How I work with AI
 
-- [CLAUDE.md for crossecute/protocol](https://gist.github.com/pegahcarter/539242654972852db7f6985b12b79a08): repo conventions I give Claude Code: auditor-density comments, chasing every stale reference when a fact changes, and generalizing before duplicating.
+- [My global CLAUDE.md](https://gist.github.com/pegahcarter/6db56f1b3178f0e76b2613507a9fb599): the rules I give Claude Code in every project: no AI attribution in commits, and code comments at auditor-spec density.
