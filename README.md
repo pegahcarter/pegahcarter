@@ -81,3 +81,7 @@
 <b>Borrowers</b><br>
 <img src="assets/bamm-borrowers.png" width="700" alt="BAMM borrower flow">
 </details>
+
+## How I work with AI
+
+- [CLAUDE.md for crossecute/protocol](https://gist.github.com/pegahcarter/539242654972852db7f6985b12b79a08): repo conventions I give Claude Code: auditor-density comments, chasing every stale reference when a fact changes, and generalizing before duplicating.
