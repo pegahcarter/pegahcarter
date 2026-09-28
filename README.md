@@ -84,4 +84,4 @@
 
 ## How I work with AI
 
-- [My global CLAUDE.md](https://gist.github.com/pegahcarter/6db56f1b3178f0e76b2613507a9fb599): the rules I give Claude Code in every project: no AI attribution in commits, code comments at auditor-spec density, fixing every stale reference when a fact changes, and generalizing before duplicating.
+- [My global CLAUDE.md](https://gist.github.com/pegahcarter/6db56f1b3178f0e76b2613507a9fb599)
