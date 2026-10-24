@@ -26,18 +26,18 @@
 
 | Token | Chain | Market cap* | Peak market cap* | Contract |
 |---|---|---|---|---|
-| veAERO | Base | $683.0M | $1.50B (Dec 2024) | [`0xeBf4…e6B4`](https://basescan.org/address/0xeBf418Fe2512e7E6bd9b87a8F0f294aCDC67e6B4) |
-| veVELO | Optimism | $37.8M | $242.0M (Dec 2024) | [`0xFAf8…787d`](https://optimistic.etherscan.io/address/0xFAf8FD17D9840595845582fCB047DF13f006787d) |
+| veAERO | Base | $618.6M | $1.50B (Dec 2024) | [`0xeBf4…e6B4`](https://basescan.org/address/0xeBf418Fe2512e7E6bd9b87a8F0f294aCDC67e6B4) |
+| veVELO | Optimism | $32.3M | $242.0M (Dec 2024) | [`0xFAf8…787d`](https://optimistic.etherscan.io/address/0xFAf8FD17D9840595845582fCB047DF13f006787d) |
 
 **Frax LayerZero OFTs\*\***
 
 | Token | Market cap* | Peak market cap* |
 |---|---|---|
-| frxUSD | $101.1M | $140.1M (May 2026) |
+| frxUSD | $101.0M | $140.1M (May 2026) |
 | sfrxUSD | $38.1M | $46.1M (Apr 2026) |
-| frxETH | $146.5M | $1.20B (Mar 2024) |
-| sfrxETH | $103.1M | $856.0M (Mar 2024) |
-| FRAX (WFRAX, formerly FXS) | $23.9M | $226.9M (Sep 2025) |
+| frxETH | $144.8M | $1.20B (Mar 2024) |
+| sfrxETH | $101.9M | $856.0M (Mar 2024) |
+| FRAX (WFRAX, formerly FXS) | $24.5M | $226.9M (Sep 2025) |
 
 <sub>\*\*Contract addresses on every chain: [Frax docs](https://docs.frax.com/protocol/crosschain/addresses).</sub>
 
@@ -53,7 +53,7 @@
 | FXB20291231 | Fraxtal | 2029-12-31 | $12.7M | [`0xF1e2…2153`](https://fraxscan.com/address/0xF1e2b576aF4C6a7eE966b14C810b772391e92153) |
 | FXB20551231 | Fraxtal | 2055-12-31 | $13.6M | [`0xc381…EA83`](https://fraxscan.com/address/0xc38173D34afaEA88Bc482813B3CD267bc8A1EA83) |
 
-<sub>*Fetched 2026-10-23 06:06 UTC. See [the update script](scripts/update_tvl.py) for details.</sub>
+<sub>*Fetched 2026-10-24 06:05 UTC. See [the update script](scripts/update_tvl.py) for details.</sub>
 <!-- TOKENS:END -->
 
 ## Design
