@@ -1,5 +1,5 @@
 <!-- BADGE:START -->
-![Peak combined TVL: $1.35B (Dec 2024)](https://img.shields.io/badge/peak%20combined%20TVL-%241.35B%20%28Dec%202024%29-2a78d6?style=for-the-badge)
+![Peak combined TVL: $2.71B (Dec 2024)](https://img.shields.io/badge/peak%20combined%20TVL-%242.71B%20%28Dec%202024%29-2a78d6?style=for-the-badge)
 <!-- BADGE:END -->
 
 ## Protocols I engineered
@@ -12,11 +12,11 @@
 
 | Protocol | TVL now* | Peak TVL* |
 |---|---|---|
-| [Aerodrome](https://defillama.com/protocol/aerodrome) | $387.1M | $1.25B (Dec 2024) |
-| [Velodrome](https://defillama.com/protocol/velodrome) | $39.3M | $324.0M (Mar 2023) |
-| [Fraxtal](https://defillama.com/protocol/fraxtal) | $167.2M | $281.2M (Jul 2025) |
+| [Aerodrome](https://defillama.com/protocol/aerodrome) | $364.2M | $1.35B (Dec 2024) |
+| [Velodrome](https://defillama.com/protocol/velodrome) | $368.9M | $1.35B (Dec 2024) |
+| [Fraxtal](https://defillama.com/protocol/fraxtal) | $166.7M | $281.2M (Jul 2025) |
 
-<sub>*Fetched 2026-10-19 06:07 UTC. See [the update script](scripts/update_tvl.py) for details.</sub>
+<sub>*Fetched 2026-10-25 06:05 UTC. See [the update script](scripts/update_tvl.py) for details.</sub>
 <!-- TVL:END -->
 
 ## Tokens I developed
@@ -26,18 +26,18 @@
 
 | Token | Chain | Market cap* | Peak market cap* | Contract |
 |---|---|---|---|---|
-| veAERO | Base | $618.6M | $1.50B (Dec 2024) | [`0xeBf4…e6B4`](https://basescan.org/address/0xeBf418Fe2512e7E6bd9b87a8F0f294aCDC67e6B4) |
-| veVELO | Optimism | $32.3M | $242.0M (Dec 2024) | [`0xFAf8…787d`](https://optimistic.etherscan.io/address/0xFAf8FD17D9840595845582fCB047DF13f006787d) |
+| veAERO | Base | $570.4M | $1.50B (Dec 2024) | [`0xeBf4…e6B4`](https://basescan.org/address/0xeBf418Fe2512e7E6bd9b87a8F0f294aCDC67e6B4) |
+| veVELO | Optimism | $28.1M | $242.0M (Dec 2024) | [`0xFAf8…787d`](https://optimistic.etherscan.io/address/0xFAf8FD17D9840595845582fCB047DF13f006787d) |
 
 **Frax LayerZero OFTs\*\***
 
 | Token | Market cap* | Peak market cap* |
 |---|---|---|
-| frxUSD | $101.0M | $140.1M (May 2026) |
+| frxUSD | $100.6M | $140.1M (May 2026) |
 | sfrxUSD | $38.1M | $46.1M (Apr 2026) |
-| frxETH | $144.8M | $1.20B (Mar 2024) |
-| sfrxETH | $101.9M | $856.0M (Mar 2024) |
-| FRAX (WFRAX, formerly FXS) | $24.5M | $226.9M (Sep 2025) |
+| frxETH | $143.1M | $1.20B (Mar 2024) |
+| sfrxETH | $100.9M | $856.0M (Mar 2024) |
+| FRAX (WFRAX, formerly FXS) | $24.3M | $226.9M (Sep 2025) |
 
 <sub>\*\*Contract addresses on every chain: [Frax docs](https://docs.frax.com/protocol/crosschain/addresses).</sub>
 
@@ -53,7 +53,7 @@
 | FXB20291231 | Fraxtal | 2029-12-31 | $12.7M | [`0xF1e2…2153`](https://fraxscan.com/address/0xF1e2b576aF4C6a7eE966b14C810b772391e92153) |
 | FXB20551231 | Fraxtal | 2055-12-31 | $13.6M | [`0xc381…EA83`](https://fraxscan.com/address/0xc38173D34afaEA88Bc482813B3CD267bc8A1EA83) |
 
-<sub>*Fetched 2026-10-24 06:05 UTC. See [the update script](scripts/update_tvl.py) for details.</sub>
+<sub>*Fetched 2026-10-25 06:05 UTC. See [the update script](scripts/update_tvl.py) for details.</sub>
 <!-- TOKENS:END -->
 
 ## Design
