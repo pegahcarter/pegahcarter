@@ -13,7 +13,9 @@ import datetime, functools, json, math, re, urllib.parse, urllib.request
 NOW = datetime.datetime.now(datetime.timezone.utc)
 STAMP = NOW.strftime("%Y-%m-%d %H:%M UTC")
 
-TVL_PROTOCOLS = [("Aerodrome", "aerodrome"), ("Velodrome", "velodrome"), ("Fraxtal", "fraxtal")]
+# DefiLlama merged Aerodrome and Velodrome into one parent protocol, "Aero", and the old slugs now
+# return it too; listing them separately would count the same TVL twice.
+TVL_PROTOCOLS = [("Aero", "aero"), ("Fraxtal", "fraxtal")]
 SKIP = {"borrowed", "staking", "pool2", "vesting"}
 
 EXPLORERS = {
@@ -124,9 +126,10 @@ def tvl_block():
     for theme in THEMES:
         with open(f"assets/tvl-{theme}.svg", "w") as f:
             f.write(tvl_svg(series, THEMES[theme]))
+    alt = "TVL over time for " + " and ".join(name for name, _ in TVL_PROTOCOLS)
     # Absolute URLs: the profile page at github.com/<user> doesn't resolve repo-relative srcset paths.
     picture = (f'<picture>\n  <source media="(prefers-color-scheme: dark)" srcset="{ASSETS_URL}/tvl-dark.svg">\n'
-               f'  <img alt="TVL over time for Aerodrome, Velodrome and Fraxtal" src="{ASSETS_URL}/tvl-light.svg">\n</picture>')
+               f'  <img alt="{alt}" src="{ASSETS_URL}/tvl-light.svg">\n</picture>')
     return "\n".join([picture, ""] + rows + ["", FOOTNOTE])
 
 
