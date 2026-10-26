@@ -1,6 +1,6 @@
 """Rewrite the BADGE, TVL and TOKENS blocks in README.md from live public APIs.
 
-TVL:          DefiLlama protocol API (current + peak TVL, history for assets/tvl-*.svg)
+TVL:          DefiLlama protocol API (current, peak and 3-year average TVL, history for assets/tvl-*.svg)
 Market caps:  DefiLlama coins API (CoinGecko market caps, no API key needed)
 Peak caps:    running max in scripts/peaks.json; free APIs only return 365 days of history,
               so pre-tracking peaks were seeded by hand
@@ -16,6 +16,7 @@ STAMP = NOW.strftime("%Y-%m-%d %H:%M UTC")
 # DefiLlama merged Aerodrome and Velodrome into one parent protocol, "Aero", and the old slugs now
 # return it too; listing them separately would count the same TVL twice.
 TVL_PROTOCOLS = [("Aero", "aero"), ("Fraxtal", "fraxtal")]
+AVG_DAYS = 3 * 365
 SKIP = {"borrowed", "staking", "pool2", "vesting"}
 
 EXPLORERS = {
@@ -103,26 +104,33 @@ def peak_of(daily):
     return daily[day], day_to_date(day)
 
 
+def recent_avg(daily):
+    # Days before a protocol's DefiLlama history starts are skipped, not counted as $0.
+    start = NOW.date().toordinal() - EPOCH - AVG_DAYS
+    recent = [x for day, x in daily.items() if day > start]
+    return sum(recent) / len(recent)
+
+
 def badge_block():
     combined = {}
     for _, slug in TVL_PROTOCOLS:
         for day, x in tvl(slug)[1].items():
             combined[day] = combined.get(day, 0) + x
-    value, when = peak_of(combined)
-    message = f"{usd(value)} ({when:%b %Y})"
-    url = ("https://img.shields.io/badge/" + urllib.parse.quote("peak combined TVL") + "-"
+    label, message = "avg combined TVL", f"{usd(recent_avg(combined))} (last 3 years)"
+    url = ("https://img.shields.io/badge/" + urllib.parse.quote(label) + "-"
            + urllib.parse.quote(message) + "-2a78d6?style=for-the-badge")
-    return f"![Peak combined TVL: {message}]({url})"
+    return f"![Average combined TVL: {message}]({url})"
 
 
 def tvl_block():
-    rows = ["| Protocol | TVL now* | Peak TVL* |", "|---|---|---|"]
+    rows = ["| Protocol | TVL now* | 3-year average* | Peak TVL* |", "|---|---|---|---|"]
     series = []
     for name, slug in TVL_PROTOCOLS:
         cur, daily = tvl(slug)
         peak, when = peak_of(daily)
         series.append((name, daily, cur))
-        rows.append(f"| [{name}](https://defillama.com/protocol/{slug}) | {usd(cur)} | {usd(peak)} ({when:%b %Y}) |")
+        rows.append(f"| [{name}](https://defillama.com/protocol/{slug}) | {usd(cur)} | {usd(recent_avg(daily))} "
+                    f"| {usd(peak)} ({when:%b %Y}) |")
     for theme in THEMES:
         with open(f"assets/tvl-{theme}.svg", "w") as f:
             f.write(tvl_svg(series, THEMES[theme]))
