@@ -92,7 +92,9 @@ def tvl(slug):
 
 
 EPOCH = datetime.date(1970, 1, 1).toordinal()
-ASSETS_URL = "https://raw.githubusercontent.com/pegahcarter/pegahcarter/main/assets"
+# refs/heads/main, not main: raw.githubusercontent.com was seen serving the previous commit for the
+# short branch name after a push, while the full ref resolved to the new one.
+ASSETS_URL = "https://raw.githubusercontent.com/pegahcarter/pegahcarter/refs/heads/main/assets"
 
 
 def day_to_date(day):

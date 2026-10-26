@@ -60,8 +60,8 @@ I have shipped production systems for 5+ years, including a DEX that I co-author
 
 <!-- TVL:START -->
 <picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/pegahcarter/pegahcarter/main/assets/tvl-dark.svg">
-  <img alt="TVL over time for Aero and Fraxtal" src="https://raw.githubusercontent.com/pegahcarter/pegahcarter/main/assets/tvl-light.svg">
+  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/pegahcarter/pegahcarter/refs/heads/main/assets/tvl-dark.svg">
+  <img alt="TVL over time for Aero and Fraxtal" src="https://raw.githubusercontent.com/pegahcarter/pegahcarter/refs/heads/main/assets/tvl-light.svg">
 </picture>
 
 | Protocol | TVL now* | 3-year average* | Peak TVL* |
@@ -69,7 +69,7 @@ I have shipped production systems for 5+ years, including a DEX that I co-author
 | [Aero](https://defillama.com/protocol/aero) | $367.2M | $578.8M | $1.35B (Dec 2024) |
 | [Fraxtal](https://defillama.com/protocol/fraxtal) | $166.5M | $192.4M | $281.2M (Jul 2025) |
 
-<sub>*Fetched 2026-10-26 18:53 UTC. See [the update script](scripts/update_tvl.py) for details.</sub>
+<sub>*Fetched 2026-10-26 19:05 UTC. See [the update script](scripts/update_tvl.py) for details.</sub>
 <!-- TVL:END -->
 
 ### Tokens I developed
@@ -79,7 +79,7 @@ I have shipped production systems for 5+ years, including a DEX that I co-author
 
 | Token | Chain | Market cap* | Peak market cap* | Contract |
 |---|---|---|---|---|
-| veAERO | Base | $568.5M | $1.50B (Dec 2024) | [`0xeBf4…e6B4`](https://basescan.org/address/0xeBf418Fe2512e7E6bd9b87a8F0f294aCDC67e6B4) |
+| veAERO | Base | $565.3M | $1.50B (Dec 2024) | [`0xeBf4…e6B4`](https://basescan.org/address/0xeBf418Fe2512e7E6bd9b87a8F0f294aCDC67e6B4) |
 | veVELO | Optimism | $27.0M | $242.0M (Dec 2024) | [`0xFAf8…787d`](https://optimistic.etherscan.io/address/0xFAf8FD17D9840595845582fCB047DF13f006787d) |
 
 **Frax LayerZero OFTs\*\***
@@ -106,7 +106,7 @@ I have shipped production systems for 5+ years, including a DEX that I co-author
 | FXB20291231 | Fraxtal | 2029-12-31 | $12.7M | [`0xF1e2…2153`](https://fraxscan.com/address/0xF1e2b576aF4C6a7eE966b14C810b772391e92153) |
 | FXB20551231 | Fraxtal | 2055-12-31 | $13.6M | [`0xc381…EA83`](https://fraxscan.com/address/0xc38173D34afaEA88Bc482813B3CD267bc8A1EA83) |
 
-<sub>*Fetched 2026-10-26 18:53 UTC. See [the update script](scripts/update_tvl.py) for details.</sub>
+<sub>*Fetched 2026-10-26 19:05 UTC. See [the update script](scripts/update_tvl.py) for details.</sub>
 <!-- TOKENS:END -->
 
 </details>
