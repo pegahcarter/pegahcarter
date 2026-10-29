@@ -50,7 +50,7 @@ I have shipped production systems for 5+ years, including a DEX that I co-author
 - $100M+ of TVL migrated into Velodrome v2.
 
 <!-- BADGE:START -->
-![Average combined TVL: $691.2M (last 3 years)](https://img.shields.io/badge/avg%20combined%20TVL-%24691.2M%20%28last%203%20years%29-2a78d6?style=for-the-badge)
+![Average combined TVL: $691.5M (last 3 years)](https://img.shields.io/badge/avg%20combined%20TVL-%24691.5M%20%28last%203%20years%29-2a78d6?style=for-the-badge)
 <!-- BADGE:END -->
 
 <details>
@@ -66,10 +66,10 @@ I have shipped production systems for 5+ years, including a DEX that I co-author
 
 | Protocol | TVL now* | 3-year average* | Peak TVL* |
 |---|---|---|---|
-| [Aero](https://defillama.com/protocol/aero) | $377.6M | $579.2M | $1.35B (Dec 2024) |
-| [Fraxtal](https://defillama.com/protocol/fraxtal) | $167.0M | $192.3M | $281.2M (Jul 2025) |
+| [Aero](https://defillama.com/protocol/aero) | $362.4M | $579.3M | $1.35B (Dec 2024) |
+| [Fraxtal](https://defillama.com/protocol/fraxtal) | $165.9M | $192.2M | $281.2M (Jul 2025) |
 
-<sub>*Fetched 2026-10-28 06:05 UTC. See [the update script](scripts/update_tvl.py) for details.</sub>
+<sub>*Fetched 2026-10-29 06:04 UTC. See [the update script](scripts/update_tvl.py) for details.</sub>
 <!-- TVL:END -->
 
 ### Tokens I developed
@@ -79,18 +79,18 @@ I have shipped production systems for 5+ years, including a DEX that I co-author
 
 | Token | Chain | Market cap* | Peak market cap* | Contract |
 |---|---|---|---|---|
-| veAERO | Base | $567.8M | $1.50B (Dec 2024) | [`0xeBf4…e6B4`](https://basescan.org/address/0xeBf418Fe2512e7E6bd9b87a8F0f294aCDC67e6B4) |
-| veVELO | Optimism | $27.0M | $242.0M (Dec 2024) | [`0xFAf8…787d`](https://optimistic.etherscan.io/address/0xFAf8FD17D9840595845582fCB047DF13f006787d) |
+| veAERO | Base | $549.6M | $1.50B (Dec 2024) | [`0xeBf4…e6B4`](https://basescan.org/address/0xeBf418Fe2512e7E6bd9b87a8F0f294aCDC67e6B4) |
+| veVELO | Optimism | $25.2M | $242.0M (Dec 2024) | [`0xFAf8…787d`](https://optimistic.etherscan.io/address/0xFAf8FD17D9840595845582fCB047DF13f006787d) |
 
 **Frax LayerZero OFTs\*\***
 
 | Token | Market cap* | Peak market cap* |
 |---|---|---|
-| frxUSD | $99.3M | $140.1M (May 2026) |
-| sfrxUSD | $39.1M | $46.1M (Apr 2026) |
-| frxETH | $140.6M | $1.20B (Mar 2024) |
-| sfrxETH | $100.6M | $856.0M (Mar 2024) |
-| FRAX (WFRAX, formerly FXS) | $24.7M | $226.9M (Sep 2025) |
+| frxUSD | $99.4M | $140.1M (May 2026) |
+| sfrxUSD | $39.0M | $46.1M (Apr 2026) |
+| frxETH | $138.5M | $1.20B (Mar 2024) |
+| sfrxETH | $99.4M | $856.0M (Mar 2024) |
+| FRAX (WFRAX, formerly FXS) | $23.4M | $226.9M (Sep 2025) |
 
 <sub>\*\*Contract addresses on every chain: [Frax docs](https://docs.frax.com/protocol/crosschain/addresses).</sub>
 
@@ -106,7 +106,7 @@ I have shipped production systems for 5+ years, including a DEX that I co-author
 | FXB20291231 | Fraxtal | 2029-12-31 | $12.7M | [`0xF1e2…2153`](https://fraxscan.com/address/0xF1e2b576aF4C6a7eE966b14C810b772391e92153) |
 | FXB20551231 | Fraxtal | 2055-12-31 | $13.6M | [`0xc381…EA83`](https://fraxscan.com/address/0xc38173D34afaEA88Bc482813B3CD267bc8A1EA83) |
 
-<sub>*Fetched 2026-10-28 06:05 UTC. See [the update script](scripts/update_tvl.py) for details.</sub>
+<sub>*Fetched 2026-10-29 06:04 UTC. See [the update script](scripts/update_tvl.py) for details.</sub>
 <!-- TOKENS:END -->
 
 </details>
