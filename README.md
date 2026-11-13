@@ -2,7 +2,7 @@
 
 **Senior Software Engineer**
 
-I have shipped production systems for 5+ years, including a DEX that I co-authored and that grew to over $1B in TVL. I write Solidity, TypeScript, Python, Rust, Go and Bash, and I pick up a new language or runtime when the work needs it. I also have a background in formal security auditing and test-driven development.
+I write Solidity, TypeScript, Python, Rust, Go and Bash, and I pick up a new language or runtime when the work needs it. I also have a background in formal security auditing and test-driven development.
 
 **Languages:** Solidity · Yul · TypeScript · JavaScript · Python · Rust (Anchor) · Go · Bash · SQL · Move
 
