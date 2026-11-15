@@ -2,11 +2,6 @@
 
 ## What I've built
 
-### DEX
-
-- **[Velodrome v2 contracts](https://github.com/velodrome-finance/contracts)**: the core contracts of Velodrome, a DEX on Optimism. I co-authored and deployed them, designed the NFT-based governance, and wrote the unit, integration, E2E and fuzz test suites in Foundry. [Aerodrome](https://github.com/aerodrome-finance/contracts) on Base is built from the same codebase. *Solidity, Typescript*
-- **[meTokens](https://github.com/meTokens/meTokens-core)**: built the protocol from zero with the founder, using EIP-2535 Diamonds and Bancor bonding curves. I wrote the TypeScript test suites and deploy scripts and led code review. *Solidity, TypeScript, GraphQL*
-
 ### Multichain infrastructure
 
 - **[Frax crosschain tokens](https://docs.frax.com/protocol/crosschain/overview)**: Frax's LayerZero tokens on EVM chains, Solana and Aptos. I led this work and wrote the core contracts of [Hop V2](https://github.com/FraxFinance/hop-v2), a bridge that routes tokens through a hub on Fraxtal. *Solidity, TypeScript*
@@ -22,6 +17,11 @@
 ### L2
 
 - **[Fraxtal](https://docs.frax.com/fraxtal)**: an OP-Stack L2. Core engineer. I upgraded its OP-Stack protocol contracts and maintained live protocol upgrades. *Solidity, Go*
+
+### DEX
+
+- **[Velodrome v2 contracts](https://github.com/velodrome-finance/contracts)**: the core contracts of Velodrome, a DEX on Optimism. I co-authored and deployed them, designed the NFT-based governance, and wrote the unit, integration, E2E and fuzz test suites in Foundry. [Aerodrome](https://github.com/aerodrome-finance/contracts) on Base is built from the same codebase. *Solidity, Typescript*
+- **[meTokens](https://github.com/meTokens/meTokens-core)**: built the protocol from zero with the founder, using EIP-2535 Diamonds and Bancor bonding curves. I wrote the TypeScript test suites and deploy scripts and led code review. *Solidity, TypeScript, GraphQL*
  
 ### Security and developer tooling
 
