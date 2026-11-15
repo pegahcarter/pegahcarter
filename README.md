@@ -1,42 +1,32 @@
 # Carter Carlson
 
-**Senior Software Engineer**
-
-I write Solidity, TypeScript, Python, Rust, Go and Bash, and I pick up a new language or runtime when the work needs it. I also have a background in formal security auditing and test-driven development.
-
-**Languages:** Solidity · Yul · TypeScript · JavaScript · Python · Rust (Anchor) · Go · Bash · SQL · Move
-
 ## What I've built
 
 ### DEX
 
-- **[Velodrome v2 contracts](https://github.com/velodrome-finance/contracts)**: the core contracts of Velodrome, a DEX on Optimism. I co-authored and deployed them, designed the NFT-based governance, and wrote the unit, integration, E2E and fuzz test suites in Foundry. [Aerodrome](https://github.com/aerodrome-finance/contracts) on Base is built from the same codebase. *Solidity*
+- **[Velodrome v2 contracts](https://github.com/velodrome-finance/contracts)**: the core contracts of Velodrome, a DEX on Optimism. I co-authored and deployed them, designed the NFT-based governance, and wrote the unit, integration, E2E and fuzz test suites in Foundry. [Aerodrome](https://github.com/aerodrome-finance/contracts) on Base is built from the same codebase. *Solidity, Typescript*
+- **[meTokens](https://github.com/meTokens/meTokens-core)**: built the protocol from zero with the founder, using EIP-2535 Diamonds and Bancor bonding curves. I wrote the TypeScript test suites and deploy scripts and led code review. *Solidity, TypeScript, GraphQL*
 
 ### Multichain infrastructure
 
 - **[Frax crosschain tokens](https://docs.frax.com/protocol/crosschain/overview)**: Frax's LayerZero tokens on EVM chains, Solana and Aptos. I led this work and wrote the core contracts of [Hop V2](https://github.com/FraxFinance/hop-v2), a bridge that routes tokens through a hub on Fraxtal. *Solidity, TypeScript*
-- **[Solana deployment](https://github.com/FraxFinance/frax-oft-upgradeable/pull/50)**: deployed Frax's Anchor OFT program to Solana and wrote the first [TypeScript ops tasks](https://github.com/FraxFinance/frax-oft-upgradeable/tree/master/tasks/solana) that configure and run it. *Rust (Anchor), TypeScript*
-- **[Aptos deployment](https://github.com/FraxFinance/frax-oft-upgradeable/tree/master/deploy-move)**: peer-reviewed the Move deploy and wiring code. *Move*
+- **[Solana deployment](https://github.com/FraxFinance/frax-oft-upgradeable/pull/50)**: deployed Frax's Anchor OFT program to Solana and wrote the first [TypeScript ops tasks](https://github.com/FraxFinance/frax-oft-upgradeable/tree/master/tasks/solana) that configure and run it. *Rust, TypeScript*
+- **[Aptos deployment](https://github.com/FraxFinance/frax-oft-upgradeable/tree/master/deploy-move)**: led the Move deploy and wiring code. *Move, Typescript*
 - **[frax-tron](https://github.com/FraxFinance/frax-tron)**: FRAX, sFRAX and FXS as TRC-20 tokens on Tron, with Fraxferry bridges to Fraxtal and a Tron multisig. Sole author. *Solidity, TypeScript*
 
 ### Lending and bonds
 
 - **[FXB](https://docs.frax.com/protocol/subprotocols/fxb/overview)**: zero-coupon bonds sold by gradual Dutch auction. Lead engineer. *Solidity*
-- **[BAMM](https://docs.frax.com/protocol/subprotocols/bamm/overview)**: oracle-free lending on Fraxswap. Core engineer. *Solidity*
+- **[BAMM](https://docs.frax.com/protocol/subprotocols/bamm/overview)**: oracle-free lending on Fraxswap. Core engineer. *Solidity, Certora*
 
 ### L2
 
-- **[Fraxtal](https://docs.frax.com/fraxtal)**: an OP-Stack L2. Core engineer. I upgraded its OP-Stack protocol contracts and maintained live protocol upgrades. *Solidity*
-
-### Protocol built from zero
-
-- **[meTokens](https://github.com/meTokens/meTokens-core)**: built the protocol from zero with the founder, using EIP-2535 Diamonds and Bancor bonding curves. I wrote the TypeScript test suites and deploy scripts and led code review. *Solidity, TypeScript*
-
+- **[Fraxtal](https://docs.frax.com/fraxtal)**: an OP-Stack L2. Core engineer. I upgraded its OP-Stack protocol contracts and maintained live protocol upgrades. *Solidity, Go*
+ 
 ### Security and developer tooling
 
 - **[forge-attest](https://github.com/crossecute/forge-attest)**: a GitHub Action that proves a queued Safe transaction is byte-for-byte the output of a pinned Forge script. Part of [crossecute](https://github.com/crossecute), a protocol for running one multisig across many chains. *Bash, Solidity*
 - **[Frax development standards](https://docs.frax.com/protocol/standards/standards)**: I wrote Frax's published standards for PR review, scripted deploys, script-driven tests and upgrade safety, and added AI PR review across Frax's repos.
-- **Auditing**: auditor at RaidGuild since 2020, on engagements for Valorem, MetaStreet and METL, among others. Before that, security research intern at Consensys Diligence, where I co-wrote the weekly security newsletter and shadowed full audits.
 
 ### Trading and data (earlier work)
 
@@ -48,6 +38,7 @@ I write Solidity, TypeScript, Python, Rust, Go and Bash, and I pick up a new lan
 - $250M+ moved across chains on Frax's LayerZero tokens, with multisig operations cut from O(n) to O(1).
 - $40M+ of FXB bonds issued in 18 months.
 - $100M+ of TVL migrated into Velodrome v2.
+- $0 of user funds lost
 
 <!-- BADGE:START -->
 ![Average combined TVL: $688.7M (last 3 years)](https://img.shields.io/badge/avg%20combined%20TVL-%24688.7M%20%28last%203%20years%29-2a78d6?style=for-the-badge)
