@@ -15,7 +15,7 @@ Software engineer and AI developer. I build production systems where mistakes co
 | **$40M** issued | [FXB](https://docs.frax.com/protocol/subprotocols/fxb/overview) bonds, where I was lead engineer |
 | **$0** | user funds lost |
 
-<sub>User counts are active addresses from [growthepie](https://www.growthepie.com/applications/aerodrome-finance) labeled contracts. frxUSD market cap is CoinGecko data via DefiLlama. TVL refreshes daily from [DefiLlama](scripts/update_tvl.py).</sub>
+<sub>User counts are active addresses from [growthepie](https://www.growthepie.com/applications/aerodrome-finance) labeled contracts. Peak TVL and the frxUSD market cap are from [DefiLlama](https://defillama.com) (market cap via CoinGecko).</sub>
 
 ## Building with AI
 
@@ -49,23 +49,4 @@ Software engineer and AI developer. I build production systems where mistakes co
 <br><br>
 <b>Borrowers</b><br>
 <img src="assets/bamm-borrowers.png" width="700" alt="BAMM borrower flow">
-</details>
-
-<details>
-<summary><b>Live TVL</b> (updated daily)</summary>
-
-<!-- TVL:START -->
-<picture>
-  <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/pegahcarter/pegahcarter/refs/heads/main/assets/tvl-dark.svg">
-  <img alt="TVL over time for Aero and Fraxtal" src="https://raw.githubusercontent.com/pegahcarter/pegahcarter/refs/heads/main/assets/tvl-light.svg">
-</picture>
-
-| Protocol | TVL now* | 3-year average* | Peak TVL* |
-|---|---|---|---|
-| [Aero](https://defillama.com/protocol/aero) | $287.6M | $574.3M | $1.35B (Dec 2024) |
-| [Fraxtal](https://defillama.com/protocol/fraxtal) | $161.1M | $191.3M | $281.2M (Jul 2025) |
-
-<sub>*Fetched 2026-11-19 21:16 UTC. See [the update script](scripts/update_tvl.py) for details.</sub>
-<!-- TVL:END -->
-
 </details>
