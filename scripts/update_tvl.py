@@ -1,14 +1,9 @@
-"""Rewrite the BADGE, TVL and TOKENS blocks in README.md from live public APIs.
+"""Rewrite the TVL block in README.md from the DefiLlama protocol API.
 
-TVL:          DefiLlama protocol API (current, peak and 3-year average TVL, history for assets/tvl-*.svg)
-Market caps:  DefiLlama coins API (CoinGecko market caps, no API key needed)
-Peak caps:    running max in scripts/peaks.json; free APIs only return 365 days of history,
-              so pre-tracking peaks were seeded by hand
-FXB bonds:    Frax API (bond list) + on-chain totalFxbMinted (max supply) x $1 face value
-OFT list:     hardcoded from FraxFinance/frax-oft-upgradeable README (commit 981a7b9, 2026-09-10)
-If a source fails, that block is left unchanged so the README never breaks.
+Writes current, peak and 3-year average TVL, and the history chart in assets/tvl-*.svg.
+If the source fails, the block is left unchanged so the README never breaks.
 """
-import datetime, functools, json, math, re, urllib.parse, urllib.request
+import datetime, json, math, re, urllib.request
 
 NOW = datetime.datetime.now(datetime.timezone.utc)
 STAMP = NOW.strftime("%Y-%m-%d %H:%M UTC")
@@ -18,30 +13,6 @@ STAMP = NOW.strftime("%Y-%m-%d %H:%M UTC")
 TVL_PROTOCOLS = [("Aero", "aero"), ("Fraxtal", "fraxtal")]
 AVG_DAYS = 3 * 365
 SKIP = {"borrowed", "staking", "pool2", "vesting"}
-
-EXPLORERS = {
-    "ethereum": "https://etherscan.io/address/",
-    "fraxtal": "https://fraxscan.com/address/",
-    "optimism": "https://optimistic.etherscan.io/address/",
-    "base": "https://basescan.org/address/",
-}
-RPC = {"ethereum": "https://ethereum-rpc.publicnode.com", "fraxtal": "https://rpc.frax.com"}
-
-# (symbol, chain, VotingEscrow address, coingecko id of the underlying token)
-PROTOCOL_TOKENS = [
-    ("veAERO", "base", "0xeBf418Fe2512e7E6bd9b87a8F0f294aCDC67e6B4", "aerodrome-finance"),
-    ("veVELO", "optimism", "0xFAf8FD17D9840595845582fCB047DF13f006787d", "velodrome-finance"),
-]
-
-# Frax LayerZero OFTs: (symbol, coingecko id)
-FRAX_OFTS = [
-    ("frxUSD", "frax-usd"),
-    ("sfrxUSD", "staked-frax-usd"),
-    ("frxETH", "frax-ether"),
-    ("sfrxETH", "staked-frax-ether"),
-    ("FRAX (WFRAX, formerly FXS)", "frax-share"),
-]
-PEAKS_FILE = "scripts/peaks.json"
 FOOTNOTE = f"<sub>*Fetched {STAMP}. See [the update script](scripts/update_tvl.py) for details.</sub>"
 
 
@@ -63,19 +34,7 @@ def usd(x):
     return f"${x/1e3:.0f}K"
 
 
-def link(chain, addr):
-    short = f"`{addr[:6]}…{addr[-4:]}`"
-    base = EXPLORERS.get(chain)
-    return f"[{short}]({base}{addr})" if base else short
-
-
-def mcaps(ids):
-    d = get("https://coins.llama.fi/mcaps", {"coins": [f"coingecko:{i}" for i in ids]})
-    return {i: d.get(f"coingecko:{i}", {}).get("mcap") for i in ids}
-
-
 # ---------- TVL ----------
-@functools.cache
 def tvl(slug):
     d = get(f"https://api.llama.fi/protocol/{slug}")
     chains = {k: v for k, v in d["chainTvls"].items() if "-" not in k and k not in SKIP}
@@ -111,17 +70,6 @@ def recent_avg(daily):
     start = NOW.date().toordinal() - EPOCH - AVG_DAYS
     recent = [x for day, x in daily.items() if day > start]
     return sum(recent) / len(recent)
-
-
-def badge_block():
-    combined = {}
-    for _, slug in TVL_PROTOCOLS:
-        for day, x in tvl(slug)[1].items():
-            combined[day] = combined.get(day, 0) + x
-    label, message = "avg combined TVL", f"{usd(recent_avg(combined))} (last 3 years)"
-    url = ("https://img.shields.io/badge/" + urllib.parse.quote(label) + "-"
-           + urllib.parse.quote(message) + "-2a78d6?style=for-the-badge")
-    return f"![Average combined TVL: {message}]({url})"
 
 
 def tvl_block():
@@ -227,64 +175,6 @@ def tvl_svg(series, t):
     return "\n".join(out) + "\n"
 
 
-# ---------- Tokens ----------
-FXB_MINTED = "0xd44845fd"  # totalFxbMinted(): only ever increases, so it is the bond's max supply
-
-
-def eth_call_uint(chain, addr, data):
-    r = get(RPC[chain], {"jsonrpc": "2.0", "id": 1, "method": "eth_call",
-                         "params": [{"to": addr, "data": data}, "latest"]})
-    return int(r["result"], 16) / 1e18
-
-
-def update_peaks(caps):
-    try:
-        peaks = json.load(open(PEAKS_FILE))
-    except FileNotFoundError:
-        peaks = {}
-    for cg, cap in caps.items():
-        if cap and cap > peaks.get(cg, {}).get("mcap", 0):
-            peaks[cg] = {"mcap": round(cap, -5), "date": NOW.date().isoformat()}
-    return peaks
-
-
-def peak(peaks, cg):
-    p = peaks.get(cg)
-    if not p:
-        return "n/a"
-    return f"{usd(p['mcap'])} ({datetime.date.fromisoformat(p['date']):%b %Y})"
-
-
-def tokens_block():
-    caps = mcaps([t[3] for t in PROTOCOL_TOKENS] + [t[1] for t in FRAX_OFTS])
-    peaks = update_peaks(caps)
-
-    out = ["**Protocol tokens**", "", "| Token | Chain | Market cap* | Peak market cap* | Contract |", "|---|---|---|---|---|"]
-    for sym, chain, addr, cg in PROTOCOL_TOKENS:
-        out.append(f"| {sym} | {chain.capitalize()} | {usd(caps[cg])} | {peak(peaks, cg)} | {link(chain, addr)} |")
-
-    out += ["", "**Frax LayerZero OFTs\\*\\***", "", "| Token | Market cap* | Peak market cap* |", "|---|---|---|"]
-    for sym, cg in FRAX_OFTS:
-        out.append(f"| {sym} | {usd(caps[cg])} | {peak(peaks, cg)} |")
-    out += ["", "<sub>\\*\\*Contract addresses on every chain: [Frax docs](https://docs.frax.com/protocol/crosschain/addresses).</sub>"]
-
-    bonds = get("https://api.frax.finance/v2/fxb/bonds")["bonds"]
-    out += ["", "**FXB bonds**", "", "| Bond | Chain | Maturity | Value Issued* | Contract |", "|---|---|---|---|---|"]
-    for b in sorted(bonds, key=lambda b: (b["maturity"], b["chain"])):
-        try:
-            cap = usd(eth_call_uint(b["chain"], b["address"], FXB_MINTED) * 1.0)  # max supply x $1 face value
-        except Exception:
-            cap = "n/a"
-        out.append(f"| {b['symbol']} | {b['chain'].capitalize()} | {b['maturity']} | {cap} | {link(b['chain'], b['address'])} |")
-
-    out += ["", FOOTNOTE]
-    # Written only after every source succeeded, so a failed run never persists partial peaks.
-    with open(PEAKS_FILE, "w") as f:
-        json.dump(peaks, f, indent=2)
-        f.write("\n")
-    return "\n".join(out)
-
-
 def replace(readme, tag, builder):
     try:
         block = builder()
@@ -296,8 +186,6 @@ def replace(readme, tag, builder):
 
 
 readme = open("README.md").read()
-readme = replace(readme, "BADGE", badge_block)
 readme = replace(readme, "TVL", tvl_block)
-readme = replace(readme, "TOKENS", tokens_block)
 open("README.md", "w").write(readme)
 print(readme)
