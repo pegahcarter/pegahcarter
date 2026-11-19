@@ -25,6 +25,32 @@ Software engineer and AI developer. I build production systems where mistakes co
 - At Frax, I rolled out AI agents and AI PR review across a dozen engineers and wrote the team's [engineering standards](https://docs.frax.com/protocol/standards/standards).
 - [My global CLAUDE.md](https://gist.github.com/pegahcarter/6db56f1b3178f0e76b2613507a9fb599)
 
+## Design
+
+<details>
+<summary><b>Frax crosschain hub</b>: architecture diagram of Frax token flows across chains</summary>
+<br>
+<a href="https://docs.frax.com/protocol/crosschain/overview"><img src="assets/crosschain-hub.png" width="700" alt="Frax crosschain hub architecture diagram"></a>
+</details>
+
+<details>
+<summary><b>FXB bonds</b>: architecture diagram of the FXB zero-coupon bond system and Bonds AMO auctions</summary>
+<br>
+<img src="assets/fxb-amo.png" width="700" alt="FXB bonds and Bonds AMO architecture diagram">
+</details>
+
+<details>
+<summary><b>BAMM</b>: overview, lender and borrower flow diagrams</summary>
+<br>
+<a href="https://docs.frax.com/protocol/subprotocols/bamm/overview"><img src="assets/bamm.png" width="700" alt="BAMM architecture overview"></a>
+<br><br>
+<b>Lenders</b><br>
+<img src="assets/bamm-lenders.png" width="700" alt="BAMM lender flow">
+<br><br>
+<b>Borrowers</b><br>
+<img src="assets/bamm-borrowers.png" width="700" alt="BAMM borrower flow">
+</details>
+
 <details>
 <summary><b>Live TVL</b> (updated daily)</summary>
 
