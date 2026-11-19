@@ -36,10 +36,10 @@ Software engineer and AI developer. I build production systems where mistakes co
 
 | Protocol | TVL now* | 3-year average* | Peak TVL* |
 |---|---|---|---|
-| [Aero](https://defillama.com/protocol/aero) | $288.0M | $574.3M | $1.35B (Dec 2024) |
-| [Fraxtal](https://defillama.com/protocol/fraxtal) | $161.4M | $191.3M | $281.2M (Jul 2025) |
+| [Aero](https://defillama.com/protocol/aero) | $287.6M | $574.3M | $1.35B (Dec 2024) |
+| [Fraxtal](https://defillama.com/protocol/fraxtal) | $161.1M | $191.3M | $281.2M (Jul 2025) |
 
-<sub>*Fetched 2026-11-19 06:04 UTC. See [the update script](scripts/update_tvl.py) for details.</sub>
+<sub>*Fetched 2026-11-19 21:16 UTC. See [the update script](scripts/update_tvl.py) for details.</sub>
 <!-- TVL:END -->
 
 </details>
