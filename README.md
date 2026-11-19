@@ -13,7 +13,6 @@ Software engineer and AI developer. I build production systems where mistakes co
 | **$281M** peak TVL | [Fraxtal](https://docs.frax.com/fraxtal) L2, where I ran live protocol upgrades; peak **10K** daily and **39K** monthly active addresses |
 | **$140M** peak market cap | frxUSD, one of the stablecoins carried by the crosschain token system above |
 | **$40M** issued | [FXB](https://docs.frax.com/protocol/subprotocols/fxb/overview) bonds, where I was lead engineer |
-| **$0** | user funds lost |
 
 <sub>User counts are active addresses from [growthepie](https://www.growthepie.com/applications/aerodrome-finance) labeled contracts. Peak TVL and the frxUSD market cap are from [DefiLlama](https://defillama.com) (market cap via CoinGecko).</sub>
 
