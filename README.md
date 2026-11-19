@@ -22,7 +22,7 @@ Software engineer and AI developer. I build production systems where mistakes co
 - **[Crossecute](https://github.com/crossecute)**: multi-agent workflows on every commit, PR and issue, governed by repo rules and layered AI review.
 - **[forge-attest](https://github.com/crossecute/forge-attest)**: a GitHub Action that proves a multisig transaction matches a pinned script, shipped as a Claude Code plugin.
 - **[agent-skills](https://github.com/pegahcarter/agent-skills)**: scheduled, least-privilege Claude agents with tested Python checks.
-- At Frax, I rolled out AI agents and AI PR review across a dozen engineers and wrote the team's [engineering standards](https://docs.frax.com/protocol/standards/standards).
+- I rolled out secure AI integration and automated PR review across a dozen engineers.
 - [My global CLAUDE.md](https://gist.github.com/pegahcarter/6db56f1b3178f0e76b2613507a9fb599)
 
 ## Design
